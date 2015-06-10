@@ -1,0 +1,15 @@
+***Use puTTY to automatically login a SSH session
+
+*PuTTYgen (puttygen.exe)
+
+Run PuTTYgen.
+	1. Select SSH-2 DSA as the Type of Key to generate.
+	2. Click generate and move your mouse around to generate randomness.
+	3. Click “Save Private Key” and save it somewhere on your computer.
+	4. Copy the entire content inside the box to your clipboard (this is your generated public key).
+	5. Login to your SSH server.
+	6. Create the file ~/.ssh/authorized_keys containing the generated public key (from step 3) on a single line. 
+	NOTE: change the .ssh folder mod to 755 as well, otherwise it's not accessible by the system account
+	7. Make this file readable (chmod 755).
+	8. Then open up PuTTY and navigate to Connection->Data and fill in the auto-login username.
+	9. Navigate to Connection->SSH->Auth and under Private-key, browse to the file you had saved earlier on your computer.
